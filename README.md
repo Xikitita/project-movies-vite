@@ -19,6 +19,7 @@ Sidor:
 -Moviesida visar info (/movies/:id) Route: `/movies/:id`, component: `Detail`
     - movie ID in the URL
     - use `useParams` to get the `id` from the URL
+    
     - passes that into an API call (within `useEffect`) to themoviedb.org to fetch details about a single movie
     - puts the response into state using `useState`
     - renders it onto the page
