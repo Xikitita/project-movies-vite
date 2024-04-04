@@ -3,6 +3,7 @@ import { MoviesList } from "./pages/MoviesList"
 import { MovieDetail } from "./pages/MovieDetail"
 
 export const App = () => {
+
   return (
     <BrowserRouter>
       <main>
@@ -14,3 +15,5 @@ export const App = () => {
     </BrowserRouter>
   )
 }
+
+
