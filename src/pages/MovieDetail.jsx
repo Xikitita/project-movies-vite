@@ -14,7 +14,6 @@ export const MovieDetail = () => {
       .then((response) => response.json())
       .then((json) => {
         setMovie(json)
-        console.log(json)
       })
       .catch((error) => {
         console.log(error)
@@ -25,7 +24,10 @@ export const MovieDetail = () => {
      return Math.round(movie.vote_average*10) / 10
   }
   
-  useEffect(() => fetchSingleMovie(), []);
+  useEffect (() => {
+    fetchSingleMovie()
+  },[]
+  )
 
   return (
     <div

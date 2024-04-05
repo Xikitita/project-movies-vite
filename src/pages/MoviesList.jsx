@@ -12,14 +12,13 @@ export const MoviesList = () => {
       .then((response) => response.json())
       .then((json) => {
         setMovies(json.results)
-        console.log(json)
       })
       .catch((error) => {
         console.log(error)
       })
   }
 
-  useEffect(() => fetchMovies(), [])
+  useEffect(() => {fetchMovies()}, [])
 
   return (
     <div className="start-page">
