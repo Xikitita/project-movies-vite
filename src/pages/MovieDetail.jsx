@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import "./movieDetail.css";
 
 export const MovieDetail = () => {
   const { id } = useParams();
@@ -22,25 +23,31 @@ export const MovieDetail = () => {
      return rating.toFixed(1)
   }*/
   useEffect(() => fetchSingleMovie(), []);
-  //fetchSingleMovie()
+
   return (
     <div
-      className="movie-info"
+      className="background"
       style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0) 70%, rgb(0, 0, 0) 100%), 
         url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path})`,
       }}>
-      <Link to="/" className="goBackLink">
-        👈 Go back to start
-      </Link>
+      <div>
+        <Link className="goBackLink" to="/">
+          👈 Movies
+        </Link>
+      </div>
+      <div className="grid-content">
       <img
         className="small-image"
         src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
         alt=""
       />
+      <div className="movie-content">
       <h1 className="title">{movie.title}</h1>
-      <p className="rate">⭐ {movie.vote_average}</p>
+      <p className="rating">⭐ {movie.vote_average}</p>
       <p className="description">{movie.overview}</p>
+    </div>
+    </div>
     </div>
   );
 };

@@ -39,37 +39,5 @@ main {
   flex-wrap: wrap;
 }
 
-.goBackLink {
-  color: antiquewhite;
-  font-weight: bolder;
-  text-shadow: 1px 1px #4d4d4d;
-}
 
-.movie-info {
-  flex-direction: row;
-  min-height: 100%;
-  flex-grow: 1;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
 
-.small-image {
-  border: 5px solid white;
-  margin: 20px;
-}
-
-.title {
-  font-weight: bold;
-  color: antiquewhite;
-  text-shadow: 1px 1px #4d4d4d;
-}
-
-.description {
-  color: antiquewhite;
-}
-
-.rate {
-  color: antiquewhite;
-}
-/* background-attachment: fixed; */
