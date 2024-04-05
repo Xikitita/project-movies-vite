@@ -25,5 +25,3 @@ Sidor:
     - renders it onto the page
 
 https://technigo-movies-project.netlify.app/
-
-https://api.themoviedb.org/3/movie/popular?api_key=b043b1dc1d5cdd85bb488258ad0acd38&language=en-US&page=1

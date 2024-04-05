@@ -2,8 +2,9 @@ import { useState,useEffect } from "react"
 import { Link } from "react-router-dom";
 
 export const MoviesList = () => {
-   const URL =
-    "https://api.themoviedb.org/3/movie/popular?api_key=b043b1dc1d5cdd85bb488258ad0acd38&language=en-US&page=1";
+  const apiEnv = import.meta.env.VITE_MOVIE_KEY
+  const URL =
+    `https://api.themoviedb.org/3/movie/popular?api_key=${apiEnv}&language=en-US&page=1"`
     const [movies, setMovies] = useState([])
 
   const fetchMovies = () => {
@@ -11,24 +12,29 @@ export const MoviesList = () => {
       .then((response) => response.json())
       .then((json) => {
         setMovies(json.results)
+        console.log(json)
       })
   }
 
   useEffect(() => fetchMovies(), [])
 
   return (
-    <div className="startPage">
+    <div className="start-page">
       {movies.map((movie) => (
-        <div key={movie.id}>
+        <div key={movie.id} className="movie-card">
           <Link to={`movies/${movie.id}`}>
             <img
               src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
-              alt=""
+              alt={`Poster of ${movie.title}`}
+              className="title-image"
             />
           </Link>
-          <p>{movie.title}</p>
+          <div className="title-info">
+            <h1>{movie.title}</h1>
+            <p >{movie.release_date}</p>
+          </div>
         </div>
       ))}
     </div>
   );
-};
+}
