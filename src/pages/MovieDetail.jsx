@@ -10,11 +10,14 @@ export const MovieDetail = () => {
     const apiEnv = import.meta.env.VITE_MOVIE_KEY;
     fetch(
       `https://api.themoviedb.org/3/movie/${id}?api_key=${apiEnv}&language=en-US`
-      )
+    )
       .then((response) => response.json())
       .then((json) => {
-        setMovie(json);
-        console.log(json);
+        setMovie(json)
+        console.log(json)
+      })
+      .catch((error) => {
+        console.log(error)
       })
   }
 

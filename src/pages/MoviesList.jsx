@@ -14,6 +14,9 @@ export const MoviesList = () => {
         setMovies(json.results)
         console.log(json)
       })
+      .catch((error) => {
+        console.log(error)
+      })
   }
 
   useEffect(() => fetchMovies(), [])
